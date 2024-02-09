@@ -73,6 +73,11 @@ def process_image(image_path):
     model = YOLO("yolov8n.pt")  # load a pretrained model (recommended for training)
     results = model(image_path)  # predict on an image
 
+    result_string = ""
+
+    for box in results[0].boxes:
+        result_string = result_string + "Class: {} \n".format(box.cls)
+
     return str(len(results[0].boxes))
 
 if __name__ == "__main__":
