@@ -78,7 +78,7 @@ def process_image(image_path):
     for box in results[0].boxes:
         result_string = result_string + "Class: {} \n".format(box.cls)
 
-    return str(len(results[0].boxes))
+    return result_string
 
 if __name__ == "__main__":
     run()
