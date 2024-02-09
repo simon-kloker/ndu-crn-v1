@@ -76,7 +76,7 @@ def process_image(image_path):
     result_string = ""
 
     for box in results[0].boxes:
-        result_string = result_string + "Class: {} \n".format(box.cls)
+        result_string = result_string + "Class: {} \n".format(model.names[int(box.cls)])
 
     return result_string
 
